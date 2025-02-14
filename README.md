@@ -14,5 +14,9 @@ Git action을 이용한 nginx 웹서버 배포
 
 ![image](https://github.com/user-attachments/assets/0d958694-5a10-4711-a66c-8d7216b3550d)
 
+git hub 내 action deploy 상태 (성공)
+
 
 ![image](https://github.com/user-attachments/assets/ef685165-e2ea-4dd8-83e4-eabba9deae90)
+
+web 서버 배포 (성공) - nginx / git hub 레포지토리내 index.html 파일 참조
