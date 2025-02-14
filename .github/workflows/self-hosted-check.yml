@@ -30,3 +30,4 @@ jobs:
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
+#1
