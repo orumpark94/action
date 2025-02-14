@@ -9,7 +9,7 @@ Git action을 이용한 nginx 웹서버 배포
 
 → 생성해놓은 .github/workflows의 배포파일(deploy.yml)을 이용한 자동 배포, index.html 파일 로컬 서버로 복사 
 
-→ git hub의 레포지토리 action deploy 로그 확인 → 정상 동작 완료
+→ git hub의 레포지토리 action deploy 로그 확인 → 자동 배포 완료
 
 
 ![image](https://github.com/user-attachments/assets/0d958694-5a10-4711-a66c-8d7216b3550d)
