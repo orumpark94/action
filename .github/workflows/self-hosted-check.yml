@@ -1,13 +1,32 @@
-name: Self-Hosted Runner Test
-
+name: Deploy to Internal Server (Self-Hosted)
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  check-runner:
-    runs-on: self-hosted
+  deploy:
+    runs-on: self-hosted  # GitHub Actions를 사내망 서버에서 실행
+
     steps:
-      - name: Check system info
-        run: uname -a
-      - name: Check available disk space
-        run: df -h
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # GitHub에서 최신 코드 가져오기
+
+      - name: Install Nginx
+        run: |
+          if ! command -v nginx &> /dev/null; then
+            sudo yum install -y nginx
+            sudo systemctl enable nginx
+            sudo systemctl start nginx
+          else
+            echo "Nginx is already installed."
+          fi
+
+      - name: Ensure Nginx directory exists
+        run: sudo mkdir -p /var/www/html
+
+      - name: Copy index.html to Nginx directory
+        run: sudo cp index.html /var/www/html/
+
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
