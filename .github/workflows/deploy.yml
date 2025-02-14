@@ -26,8 +26,7 @@ jobs:
         run: sudo mkdir -p /var/www/html
 
       - name: Copy index.html to Nginx directory
-        run: sudo cp index.html /usr/share/nginx/html/
+        run: sudo cp index.html /usr/share/nginx/html/ #레포지토리에 있는 index.html 파일을 Nginx 디렉토리로 복사
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
-#1
