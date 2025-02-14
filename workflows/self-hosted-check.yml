@@ -1,0 +1,13 @@
+name: Self-Hosted Runner Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Check system info
+        run: uname -a
+      - name: Check available disk space
+        run: df -h
