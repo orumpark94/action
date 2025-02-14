@@ -1,23 +1,16 @@
-name: Deploy Nginx Web Page
-
+name: Deploy to Internal Server (Self-Hosted)
 on:
   push:
     branches:
-      - main  # main 브랜치에 push될 때 실행
+      - main
 
 jobs:
   deploy:
-    runs-on: rockylinux-latest
+    runs-on: self-hosted  # GitHub Actions를 사내망 서버에서 실행
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # GitHub에서 최신 코드 가져오기
 
-      - name: Deploy to Server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "index.html"
-          target: "/var/www/html/"
+      - name: Copy index.html to Nginx directory
+        run: cp index.html /var/www/html/
