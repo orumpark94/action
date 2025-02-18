@@ -28,6 +28,7 @@ Nginx 서버에서 index.html 정상 반영 여부 확인
 # 결과
 
 ![image](https://github.com/user-attachments/assets/0d958694-5a10-4711-a66c-8d7216b3550d)
+
 git hub 내 action deploy 상태 (성공)
 
 
